@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Seliskoe hozeaistvo</title>
+   <link rel="stylesheet" href="../css/style.css" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link rel="icon" href="/images/plant-under-sun.png" type="imade/x-icon" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+   <script src="https:./use.fontawesome.com/767155eaee.js"></script>
+   <script src="js/script.js"></script>
+</head>
+
+<body onload="getYear()">
+   <header>
+      <div class="logotip col-1">
+         <a href="../index.html">
+            <img class="img-header" src="../images/wheat.png" /> </a>
+      </div>
+      <div class="col-9">
+         <h1><span class="imea">&copy;</span> PromtreidAgro<span id="year"></span></h1>
+      </div>
+   </header>
+
+   <nav>
+      <a href="glavnaea.html">Главная☀</a>
+      <a href="Kontakti.html">Контакты🌎</a>
+      <a href="Uslugi.html">Услуги🤝</a>
+      <a href="Katalog _Agro.html">Каталог Агро🌱</a>
+      <a href="Tehnika.html">Техника🚜</a>
+      <a href="Rabota.html">Работа👨‍🌾</a>
+   </nav>
+      
+      <main>
+         <h2 class="centered">Контакты</h2>
+         <hr class="linia" />
+         <div class="container-contact">
+            <div class="col-3 forma-contact">
+               <h3 class="centered">Оставьте сообщение<i class="fas fa-envelope"></i></h3>
+
+               <form autocomplete="off" id="formular">
+                  <input type="text" placeholder="imea" required id="imea" />
+                  <input type="email" placeholder="email" required id="email" />
+                  <input type="text" placeholder="tema" required id="tema" />
+                  <textarea placeholder="mesaj" rows="7" id="mesaj"></textarea>
+                  <input type="button" value="отправить" id="otpraviti" onclick="send()" />
+               </form>
+            </div>
+
+            <div class="col-3 forma-contact">
+               <h3 class="centered">Телефоны<i class="fas solid fa-phone"></i></h3>
+               <!-- Формы -->
+               </label> Director:<input type="text" placeholder="079434138" /></label> <br />
+               <label>Manager:<input type="text " placeholder="079448844" /></label> <br />
+
+            </div>
+
+            <div class="col-3 forma-contact">
+               <h3 class="centered">Адрес<i class="fas solid fa-building"></i></h3>
+               <!-- Формы -->
+               </label>Strada:<input type="text" placeholder="Stefan cel Mare 42/1 16" /></label> <br />
+               <label>Email<input type="text " placeholder="079448844@mail.ru" /></label> <br />
+
+            </div>
+
+            <div class="col-3 forma-contact">
+               <p class="karta"><i class=""></i></p>
+               <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2775.3350683967724!2d28.646571429883355!3d45.924602543815986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b64b2b721a6373%3A0x68c1f6b3435a8590!2sTaraclia!5e0!3m2!1sru!2s!4v1651238428152!5m2!1sru!2s"
+                  width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+         </div>
+
+   </div>
+   </main>
+
+   </div>
+   <footer>
+
+
+   </footer>
+   <script>
+      emailjs.init("CpxkDB_7djK9fUWNy");
+      function send() {
+         if (document.getElementById("formular").checkValidity() == false) {
+            document.getElementById("formular").reportValidity();
+            return
+         }
+         var date = {
+            imea: document.getElementByid("imea").value,
+            email: document.getElementByid("email").value,
+            tema: document.getElementByid("tema").value,
+            mesaj: document.getElementByid("mesaj").value,
+         };
+         emailjs.send("service_3172dt5", "template_4enfhxq", date)
+            .then(function (responsе) {
+               alert("cообщение успешно было отправлено")
+               document.getElementById("formular").reset();
+
+            }, function (error) {
+               alert("Ошибка при отправке")
+            })
+      }
+   </script>
+
+   </main>
+   </div>
+   <footer>
+      <h3>Сельское хозяйство Тараклии 🌻</h3>
+   </footer>
+</body>
+
+</html>
